@@ -6,6 +6,7 @@ jx step bdd -b  --provider=gke --git-provider=ghe --git-provider-url=https://git
 
 echo "How storing the test results"
 
+
 # TODO transform junit.xml into a HTML report via https://github.com/jenkins-x-images/xunit-viewer
 
 jx step collect -c tests -p "reports/junit.xml"
