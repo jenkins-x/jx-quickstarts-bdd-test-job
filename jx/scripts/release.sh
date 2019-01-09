@@ -4,8 +4,8 @@ echo "Running BDD tests for Quickstarts"
 
 jx version -b
 
-export $GHE_CREDS_PSW="$(jx step credential -s jx-pipeline-git-github-ghe -k password)"
-export $JENKINS_CREDS_PSW="$(jx step credential -s  test-jenkins-user -k password)"
+export GHE_CREDS_PSW="$(jx step credential -s jx-pipeline-git-github-ghe -k password)"
+export JENKINS_CREDS_PSW="$(jx step credential -s  test-jenkins-user -k password)"
 
 echo "starting the BDD Quickstart tests"
 
