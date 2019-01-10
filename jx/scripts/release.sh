@@ -4,12 +4,12 @@ echo "Running BDD tests for Quickstarts"
 
 jx version -b
 
-export GHE_CREDS_PSW="$(jx step credential -s jx-pipeline-git-github-ghe -k password)"
-export JENKINS_CREDS_PSW="$(jx step credential -s  test-jenkins-user -k password)"
-export GKE_SA="$(jx step credential -s gke-sa -k password)"
+export GHE_CREDS_PSW="$(jx step credential -s jx-pipeline-git-github-ghe)"
+export JENKINS_CREDS_PSW="$(jx step credential -s  test-jenkins-user)"
+export GKE_SA="$(jx step credential -s gke-sa)"
 
 
-// setup kube context and git
+echo "setup kube context and git"
 
 gcloud auth activate-service-account --key-file $GKE_SA
 gcloud container clusters get-credentials anthorse --zone europe-west1-b --project jenkinsx-dev
