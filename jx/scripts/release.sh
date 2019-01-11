@@ -4,6 +4,9 @@ echo "Running BDD tests for Quickstarts"
 
 jx version -b
 
+mkdir bdd-qs
+cd bdd-qs
+
 export GHE_CREDS_PSW="$(jx step credential -s jx-pipeline-git-github-ghe)"
 export JENKINS_CREDS_PSW="$(jx step credential -s  test-jenkins-user)"
 export GKE_SA="$(jx step credential -s gke-sa)"
@@ -21,6 +24,11 @@ echo "starting the BDD Quickstart tests"
 
 jx step bdd -b  --provider=gke --git-provider=ghe --git-provider-url=https://github.beescloud.com --git-username dev1 --git-api-token $GHE_CREDS_PSW --default-admin-password $JENKINS_CREDS_PSW --no-delete-app --no-delete-repo --tests install --tests test-create-spring --ignore-fail
 
+echo ""
+echo ""
+echo "Generated reports:"
+ls -al reports
+echo ""
 echo "storing the test results on stable storage..."
 
 # TODO transform junit.xml into a HTML report via https://github.com/jenkins-x-images/xunit-viewer
