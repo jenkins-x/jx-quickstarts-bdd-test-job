@@ -14,8 +14,8 @@ echo "setup kube context and git"
 gcloud auth activate-service-account --key-file $GKE_SA
 gcloud container clusters get-credentials anthorse --zone europe-west1-b --project jenkinsx-dev
 
-git config --global --add user.name JenkinsXBot"
-git config --global --add user.email jenkins-x@googlegroups.com"
+git config --global --add user.name JenkinsXBot
+git config --global --add user.email jenkins-x@googlegroups.com
 
 echo "starting the BDD Quickstart tests"
 
