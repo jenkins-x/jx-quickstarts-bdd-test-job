@@ -27,5 +27,5 @@ echo "storing the test results on stable storage..."
 
 jx step collect -c tests -p "reports/junit.xml" --git-url https://github.com/jenkins-x/jx-devops-results.git
 
-echo "Done!"
+echo "BDD Tests Done!"
 
