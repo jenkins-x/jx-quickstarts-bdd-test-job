@@ -4,14 +4,19 @@ echo "Running BDD tests for Quickstarts"
 
 jx version -b
 
-mkdir bdd-qs
-cd bdd-qs
-
 export GHE_CREDS_PSW="$(jx step credential -s jx-pipeline-git-github-ghe)"
 export JENKINS_CREDS_PSW="$(jx step credential -s  test-jenkins-user)"
 export GKE_SA="$(jx step credential -s gke-sa)"
 
+# give the BDD report nicer names
+export REPO_NAME="base"
+export BRANCH="qs"
 
+echo ""
+echo "JX_BUILD_NUMBER = $JX_BUILD_NUMBER"
+echo "BUILD_NUMBER = BUILD_NUMBER"
+echo "BUILD_ID = BUILD_ID"
+echo ""
 echo "setup kube context and git"
 
 gcloud auth activate-service-account --key-file $GKE_SA
