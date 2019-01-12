@@ -14,7 +14,7 @@ cd jx-devops-results/jenkins-x/tests/jenkins-x/jx-devops-results
 echo "Generating allure report"
 pwd
 
-allure generate --clean qs -o allure
+allure generate --clean -o allure qs/*
 
 echo "Now adding files to git"
 
