@@ -1,0 +1,199 @@
+Step: build-step-credential-initializer:
+
+{"level":"warn","ts":1547308367.229094,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/test\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1547308367.2294376,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-0:
+
+{"level":"warn","ts":1547308368.4240203,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/test\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1547308369.4870217,"logger":"fallback-logger","caller":"git-init/main.go:92","msg":"Successfully cloned \"https://github.com/jenkins-x-images/allure.git\" @ \"f9b1691aaa7e96831ae074181a0a95a39d51e790\" in path \"/workspace\""}
+Step: build-step-jenkins:
+
+Creating docker image: jenkinsxio/allure:0.0.2
+Sending build context to Docker daemon  120.3kB
+Step 1/12 : FROM openjdk:slim
+ ---> e0ec44868998
+Step 2/12 : LABEL maintainer "jenkins-x-images@github.com"
+ ---> Using cache
+ ---> 80cda8c42056
+Step 3/12 : ENV ALLURE_NO_ANALYTICS 1
+ ---> Using cache
+ ---> 5907acfa8234
+Step 4/12 : ARG VERSION=2.6.0
+ ---> Running in d96dad7ea57d
+ ---> 9681770dfb0d
+Removing intermediate container d96dad7ea57d
+Step 5/12 : ARG SHA=d2600c93b2a7db748e11e6e158c0c32fe0e53e86881632f021e4a3c80b60ca14
+ ---> Running in 6da8fc43c4c9
+ ---> f74273bec8a2
+Removing intermediate container 6da8fc43c4c9
+Step 6/12 : ARG URL="https://dl.bintray.com/qameta/generic/io/qameta/allure/allure/${VERSION}/allure-${VERSION}.zip"
+ ---> Running in f6ce124cb88a
+ ---> 09ddaae77b74
+Removing intermediate container f6ce124cb88a
+Step 7/12 : ARG TMPFILE=/tmp/allure.zip
+ ---> Running in e90913ee0a0d
+ ---> 8c367c054ae1
+Removing intermediate container e90913ee0a0d
+Step 8/12 : ARG INSTALL_DIR=/opt/allure
+ ---> Running in 38208d5c98b1
+ ---> 7793c84e51a7
+Removing intermediate container 38208d5c98b1
+Step 9/12 : RUN cd     && apt-get update     && apt-get install -y curl     && curl -fsSL -o ${TMPFILE} ${URL}     && echo "${SHA} ${TMPFILE}" | sha256sum -c -     && unzip -q ${TMPFILE} -d ${INSTALL_DIR}     && rm ${TMPFILE}     && ln -s ${INSTALL_DIR}/allure-${VERSION}/bin/allure /usr/bin/allure
+ ---> Running in 42f5a7aacb66
+Ign:1 http://cdn-fastly.deb.debian.org/debian stretch InRelease
+Get:2 http://security-cdn.debian.org/debian-security stretch/updates InRelease [94.3 kB]
+Get:3 http://cdn-fastly.deb.debian.org/debian stretch-updates InRelease [91.0 kB]
+Get:4 http://cdn-fastly.deb.debian.org/debian stretch-backports InRelease [91.8 kB]
+Get:5 http://cdn-fastly.deb.debian.org/debian stretch Release [118 kB]
+Get:6 http://cdn-fastly.deb.debian.org/debian stretch Release.gpg [2434 B]
+Get:7 http://security-cdn.debian.org/debian-security stretch/updates/main amd64 Packages [464 kB]
+Get:8 http://cdn-fastly.deb.debian.org/debian stretch-updates/main amd64 Packages [5152 B]
+Get:9 http://cdn-fastly.deb.debian.org/debian stretch-backports/main amd64 Packages [558 kB]
+Get:10 http://cdn-fastly.deb.debian.org/debian stretch/main amd64 Packages [7089 kB]
+Fetched 8514 kB in 1s (4652 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libcurl3 libidn2-0 libldap-2.4-2 libldap-common libnghttp2-14 libpsl5
+  librtmp1 libsasl2-2 libsasl2-modules libsasl2-modules-db libssh2-1
+  libssl1.0.2 libunistring0 publicsuffix
+Suggested packages:
+  libsasl2-modules-gssapi-mit | libsasl2-modules-gssapi-heimdal
+  libsasl2-modules-ldap libsasl2-modules-otp libsasl2-modules-sql
+The following NEW packages will be installed:
+  curl libcurl3 libidn2-0 libldap-2.4-2 libldap-common libnghttp2-14 libpsl5
+  librtmp1 libsasl2-2 libsasl2-modules libsasl2-modules-db libssh2-1
+  libssl1.0.2 libunistring0 publicsuffix
+0 upgraded, 15 newly installed, 0 to remove and 1 not upgraded.
+Need to get 3161 kB of archives.
+After this operation, 8153 kB of additional disk space will be used.
+Get:1 http://cdn-fastly.deb.debian.org/debian stretch/main amd64 libsasl2-modules-db amd64 2.1.27~101-g0780600+dfsg-3 [68.2 kB]
+Get:2 http://security-cdn.debian.org/debian-security stretch/updates/main amd64 libssl1.0.2 amd64 1.0.2q-1~deb9u1 [1300 kB]
+Get:3 http://cdn-fastly.deb.debian.org/debian stretch/main amd64 libsasl2-2 amd64 2.1.27~101-g0780600+dfsg-3 [105 kB]
+Get:4 http://cdn-fastly.deb.debian.org/debian stretch/main amd64 libldap-common all 2.4.44+dfsg-5+deb9u2 [85.5 kB]
+Get:5 http://cdn-fastly.deb.debian.org/debian stretch/main amd64 libldap-2.4-2 amd64 2.4.44+dfsg-5+deb9u2 [219 kB]
+Get:6 http://cdn-fastly.deb.debian.org/debian stretch/main amd64 libunistring0 amd64 0.9.6+really0.9.3-0.1 [279 kB]
+Get:7 http://cdn-fastly.deb.debian.org/debian stretch/main amd64 libidn2-0 amd64 0.16-1+deb9u1 [60.7 kB]
+Get:8 http://cdn-fastly.deb.debian.org/debian stretch/main amd64 libnghttp2-14 amd64 1.18.1-1 [79.1 kB]
+Get:9 http://cdn-fastly.deb.debian.org/debian stretch/main amd64 libpsl5 amd64 0.17.0-3 [41.8 kB]
+Get:10 http://cdn-fastly.deb.debian.org/debian stretch/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-1+b1 [60.4 kB]
+Get:11 http://cdn-fastly.deb.debian.org/debian stretch/main amd64 libssh2-1 amd64 1.7.0-1 [138 kB]
+Get:12 http://cdn-fastly.deb.debian.org/debian stretch/main amd64 libcurl3 amd64 7.52.1-5+deb9u8 [292 kB]
+Get:13 http://cdn-fastly.deb.debian.org/debian stretch/main amd64 curl amd64 7.52.1-5+deb9u8 [228 kB]
+Get:14 http://cdn-fastly.deb.debian.org/debian stretch/main amd64 libsasl2-modules amd64 2.1.27~101-g0780600+dfsg-3 [102 kB]
+Get:15 http://cdn-fastly.deb.debian.org/debian stretch/main amd64 publicsuffix all 20181003.1334-0+deb9u1 [104 kB]
+[91mdebconf: delaying package configuration, since apt-utils is not installed
+[0mFetched 3161 kB in 0s (28.3 MB/s)
+Selecting previously unselected package libssl1.0.2:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 8183 files and directories currently installed.)
+Preparing to unpack .../00-libssl1.0.2_1.0.2q-1~deb9u1_amd64.deb ...
+Unpacking libssl1.0.2:amd64 (1.0.2q-1~deb9u1) ...
+Selecting previously unselected package libsasl2-modules-db:amd64.
+Preparing to unpack .../01-libsasl2-modules-db_2.1.27~101-g0780600+dfsg-3_amd64.deb ...
+Unpacking libsasl2-modules-db:amd64 (2.1.27~101-g0780600+dfsg-3) ...
+Selecting previously unselected package libsasl2-2:amd64.
+Preparing to unpack .../02-libsasl2-2_2.1.27~101-g0780600+dfsg-3_amd64.deb ...
+Unpacking libsasl2-2:amd64 (2.1.27~101-g0780600+dfsg-3) ...
+Selecting previously unselected package libldap-common.
+Preparing to unpack .../03-libldap-common_2.4.44+dfsg-5+deb9u2_all.deb ...
+Unpacking libldap-common (2.4.44+dfsg-5+deb9u2) ...
+Selecting previously unselected package libldap-2.4-2:amd64.
+Preparing to unpack .../04-libldap-2.4-2_2.4.44+dfsg-5+deb9u2_amd64.deb ...
+Unpacking libldap-2.4-2:amd64 (2.4.44+dfsg-5+deb9u2) ...
+Selecting previously unselected package libunistring0:amd64.
+Preparing to unpack .../05-libunistring0_0.9.6+really0.9.3-0.1_amd64.deb ...
+Unpacking libunistring0:amd64 (0.9.6+really0.9.3-0.1) ...
+Selecting previously unselected package libidn2-0:amd64.
+Preparing to unpack .../06-libidn2-0_0.16-1+deb9u1_amd64.deb ...
+Unpacking libidn2-0:amd64 (0.16-1+deb9u1) ...
+Selecting previously unselected package libnghttp2-14:amd64.
+Preparing to unpack .../07-libnghttp2-14_1.18.1-1_amd64.deb ...
+Unpacking libnghttp2-14:amd64 (1.18.1-1) ...
+Selecting previously unselected package libpsl5:amd64.
+Preparing to unpack .../08-libpsl5_0.17.0-3_amd64.deb ...
+Unpacking libpsl5:amd64 (0.17.0-3) ...
+Selecting previously unselected package librtmp1:amd64.
+Preparing to unpack .../09-librtmp1_2.4+20151223.gitfa8646d.1-1+b1_amd64.deb ...
+Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-1+b1) ...
+Selecting previously unselected package libssh2-1:amd64.
+Preparing to unpack .../10-libssh2-1_1.7.0-1_amd64.deb ...
+Unpacking libssh2-1:amd64 (1.7.0-1) ...
+Selecting previously unselected package libcurl3:amd64.
+Preparing to unpack .../11-libcurl3_7.52.1-5+deb9u8_amd64.deb ...
+Unpacking libcurl3:amd64 (7.52.1-5+deb9u8) ...
+Selecting previously unselected package curl.
+Preparing to unpack .../12-curl_7.52.1-5+deb9u8_amd64.deb ...
+Unpacking curl (7.52.1-5+deb9u8) ...
+Selecting previously unselected package libsasl2-modules:amd64.
+Preparing to unpack .../13-libsasl2-modules_2.1.27~101-g0780600+dfsg-3_amd64.deb ...
+Unpacking libsasl2-modules:amd64 (2.1.27~101-g0780600+dfsg-3) ...
+Selecting previously unselected package publicsuffix.
+Preparing to unpack .../14-publicsuffix_20181003.1334-0+deb9u1_all.deb ...
+Unpacking publicsuffix (20181003.1334-0+deb9u1) ...
+Setting up libnghttp2-14:amd64 (1.18.1-1) ...
+Setting up libldap-common (2.4.44+dfsg-5+deb9u2) ...
+Setting up libsasl2-modules-db:amd64 (2.1.27~101-g0780600+dfsg-3) ...
+Setting up libsasl2-2:amd64 (2.1.27~101-g0780600+dfsg-3) ...
+Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-1+b1) ...
+Setting up libssl1.0.2:amd64 (1.0.2q-1~deb9u1) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.24.1 /usr/local/share/perl/5.24.1 /usr/lib/x86_64-linux-gnu/perl5/5.24 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.24 /usr/share/perl/5.24 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Setting up libssh2-1:amd64 (1.7.0-1) ...
+Processing triggers for libc-bin (2.24-11+deb9u3) ...
+Setting up publicsuffix (20181003.1334-0+deb9u1) ...
+Setting up libunistring0:amd64 (0.9.6+really0.9.3-0.1) ...
+Setting up libldap-2.4-2:amd64 (2.4.44+dfsg-5+deb9u2) ...
+Setting up libsasl2-modules:amd64 (2.1.27~101-g0780600+dfsg-3) ...
+Setting up libidn2-0:amd64 (0.16-1+deb9u1) ...
+Setting up libpsl5:amd64 (0.17.0-3) ...
+Setting up libcurl3:amd64 (7.52.1-5+deb9u8) ...
+Setting up curl (7.52.1-5+deb9u8) ...
+Processing triggers for libc-bin (2.24-11+deb9u3) ...
+/tmp/allure.zip: OK
+ ---> 431c1c7e2ffc
+Removing intermediate container 42f5a7aacb66
+Step 10/12 : VOLUME /allure
+ ---> Running in 6a31bc28c0f5
+ ---> 5d17c8fc03f4
+Removing intermediate container 6a31bc28c0f5
+Step 11/12 : WORKDIR /allure
+ ---> ac23fe9111aa
+Removing intermediate container e0469906752c
+Step 12/12 : CMD allure generate --clean /workspace/reports
+ ---> Running in cecd1c53335d
+ ---> fb82369ee64e
+Removing intermediate container cecd1c53335d
+Successfully built fb82369ee64e
+The push refers to a repository [docker.io/jenkinsxio/allure]
+edfe23447e0e: Preparing
+e8d4c0163926: Preparing
+498e60ee7700: Preparing
+9f6e0b906c3a: Preparing
+d252cbb8d125: Preparing
+7f5e65271fe8: Preparing
+d4a1eb055c1f: Preparing
+7b4e562e58dc: Preparing
+7f5e65271fe8: Waiting
+d4a1eb055c1f: Waiting
+7b4e562e58dc: Waiting
+498e60ee7700: Mounted from library/openjdk
+9f6e0b906c3a: Mounted from library/openjdk
+d252cbb8d125: Mounted from library/openjdk
+7f5e65271fe8: Mounted from library/openjdk
+d4a1eb055c1f: Mounted from library/openjdk
+edfe23447e0e: Pushed
+7b4e562e58dc: Mounted from library/openjdk
+e8d4c0163926: Pushed
+0.0.2: digest: sha256:cc084a06f010cfc072c24970634735648b79c31f2d5ee37aa68ac79023f5d202 size: 1992
+
+pushing new version to git tag..
+Tag v0.0.2 created and pushed to remote origin
+
+pushed docker image: docker.io/jenkinsxio/allure:0.0.2
+you can browse the versions here: https://hub.docker.com/r/jenkinsxio/allure/
