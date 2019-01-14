@@ -9,7 +9,7 @@ git config --global --add user.email jenkins-x@googlegroups.com
 
 git clone -b gh-pages https://github.com/jenkins-x/jx-devops-results.git
 
-cd jx-devops-results/jenkins-x/tests/jenkins-x/jx-devops-results
+cd jx-devops-results/jenkins-x/tests/jenkins-x/jx-quickstarts-bdd-test-job
 
 echo "Generating allure report"
 pwd
