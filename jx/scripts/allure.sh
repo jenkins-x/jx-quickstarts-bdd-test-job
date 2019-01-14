@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "Generating the Allure Report from the test results"
+echo "Generating the Allure Report from the test results in build $BUILD_ID"
 
 echo "Using allure: $(allure --version)"
 
