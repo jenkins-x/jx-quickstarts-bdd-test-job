@@ -26,6 +26,11 @@ echo ""
 
 echo "setup kube context and git"
 
+# lets point the BDD tests at a different context and location
+mkdir -p /tmp/kube
+export KUBECONFIG=/tmp/kube
+export JX_HOME=/tmp/kube
+
 gcloud auth activate-service-account --key-file $GKE_SA
 gcloud container clusters get-credentials anthorse --zone europe-west1-b --project jenkinsx-dev
 
@@ -43,6 +48,9 @@ echo "Generated reports:"
 ls -al /home/jenkins/go/jenkins-x/bdd-jx/reports
 echo ""
 echo "storing the test results on stable storage..."
+
+unset KUBECONFIG
+unset JX_HOME
 
 cp /tmp/build-log.txt /home/jenkins/go/jenkins-x/bdd-jx/reports
 jx step stash -c tests  --basedir "/home/jenkins/go/jenkins-x/bdd-jx/reports" -p "/home/jenkins/go/jenkins-x/bdd-jx/reports/*"
