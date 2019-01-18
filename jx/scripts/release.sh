@@ -29,7 +29,7 @@ echo "setup kube context and git"
 # lets point the BDD tests at a different context and location
 export DUMMY_DIR=~/my-kube-context
 mkdir -p $DUMMY_DIR
-export KUBECONFIG=$DUMMY_DIR
+export KUBECONFIG=$DUMMY_DIR/context
 export JX_HOME=$DUMMY_DIR
 
 gcloud auth activate-service-account --key-file $GKE_SA
