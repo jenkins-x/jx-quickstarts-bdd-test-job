@@ -27,7 +27,7 @@ echo ""
 echo "setup kube context and git"
 
 # lets point the BDD tests at a different context and location
-export DUMMY_DIR=/tmp/my-kube-context
+export DUMMY_DIR=~/my-kube-context
 mkdir -p $DUMMY_DIR
 export KUBECONFIG=$DUMMY_DIR
 export JX_HOME=$DUMMY_DIR
