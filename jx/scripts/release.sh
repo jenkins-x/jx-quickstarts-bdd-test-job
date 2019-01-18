@@ -34,7 +34,7 @@ git config --global --add user.email jenkins-x@googlegroups.com
 
 echo "starting the BDD Quickstart tests"
 
-jx step bdd -b  --provider=gke --git-provider=ghe --git-provider-url=https://github.beescloud.com --git-username dev1 --git-api-token $GHE_CREDS_PSW --default-admin-password $JENKINS_CREDS_PSW --no-delete-app --no-delete-repo --tests install --tests $TESTS --ignore-fail > /home/jenkins/go/jenkins-x/bdd-jx/reports/build-log.txt
+jx step bdd -b  --provider=gke --git-provider=ghe --git-provider-url=https://github.beescloud.com --git-username dev1 --git-api-token $GHE_CREDS_PSW --default-admin-password $JENKINS_CREDS_PSW --no-delete-app --no-delete-repo --tests install --tests $TESTS --ignore-fail > /tmp/build-log.txt
 
 echo ""
 echo ""
@@ -44,6 +44,7 @@ ls -al /home/jenkins/go/jenkins-x/bdd-jx/reports
 echo ""
 echo "storing the test results on stable storage..."
 
+cp /tmp/build-log.txt /home/jenkins/go/jenkins-x/bdd-jx/reports
 jx step stash -c tests -p "/home/jenkins/go/jenkins-x/bdd-jx/reports/*"  --basedir /home/jenkins/go/jenkins-x/bdd-jx/reports --git-url https://github.com/jenkins-x/jx-devops-results.git
 
 echo "BDD Tests Done!"
