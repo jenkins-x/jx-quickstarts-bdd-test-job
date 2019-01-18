@@ -14,7 +14,7 @@ cd jx-devops-results/jenkins-x/tests/jenkins-x/jx-quickstarts-bdd-test-job
 echo "Generating allure report"
 pwd
 
-allure generate --clean -o allure qs/$BUILD_ID
+allure generate --clean -o allure qs/$BUILD_ID/artifacts
 
 echo "Now adding files to git"
 

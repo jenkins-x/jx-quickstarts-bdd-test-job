@@ -12,8 +12,8 @@ export GKE_SA="$(jx step credential -s gke-sa)"
 export REPO_NAME="base"
 export BRANCH_NAME="qs"
 
-#export TESTS="test-create-spring"
-export TESTS="all"
+export TESTS="test-create-spring"
+#export TESTS="all"
 
 # TODO maybe only need this if BUILD_NUMBER is actually "$BUILD_ID" and hasn't been expanded?
 export BUILD_NUMBER="$BUILD_ID"
@@ -44,9 +44,7 @@ ls -al /home/jenkins/go/jenkins-x/bdd-jx/reports
 echo ""
 echo "storing the test results on stable storage..."
 
-# TODO transform junit.xml into a HTML report via https://github.com/jenkins-x-images/xunit-viewer
-
-jx step collect -c tests -p "/home/jenkins/go/jenkins-x/bdd-jx/reports/junit.xml" --git-url https://github.com/jenkins-x/jx-devops-results.git
+jx step stash -c tests -p "/home/jenkins/go/jenkins-x/bdd-jx/reports/*"  --basedir /home/jenkins/go/jenkins-x/bdd-jx/reports --git-url https://github.com/jenkins-x/jx-devops-results.git
 
 echo "BDD Tests Done!"
 
