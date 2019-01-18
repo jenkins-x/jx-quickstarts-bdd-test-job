@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <testsuite name="BddJx Suite" tests="1" failures="0" errors="0" time="789.449">
+      <testcase name="quickstart spring-boot-http-gradle Creates an app" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart open-liberty Creates an app" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart rust-http&#xA; Given valid parameters when operating on the quickstart creates a rust-http quickstart and promotes it to staging&#xA;" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart rust-http&#xA; Given invalid parameters when -p param (project name) is missing exits with signal 1&#xA;" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart rust-http&#xA; Given invalid parameters when -f param (filter) does not match any quickstart exits with signal 1&#xA;" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart scala-akka-http-quickstart&#xA; Given valid parameters when operating on the quickstart creates a scala-akka-http-quickstart quickstart and promotes it to staging&#xA;" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart scala-akka-http-quickstart&#xA; Given invalid parameters when -p param (project name) is missing exits with signal 1&#xA;" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart scala-akka-http-quickstart&#xA; Given invalid parameters when -f param (filter) does not match any quickstart exits with signal 1&#xA;" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart spring-boot-rest-prometheus Creates an app" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart python-http&#xA; Given valid parameters when operating on the quickstart creates a python-http quickstart and promotes it to staging&#xA;" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart python-http&#xA; Given invalid parameters when -p param (project name) is missing exits with signal 1&#xA;" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart python-http&#xA; Given invalid parameters when -f param (filter) does not match any quickstart exits with signal 1&#xA;" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart golang-http&#xA; Given valid parameters when operating on the quickstart creates a golang-http quickstart and promotes it to staging&#xA;" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart golang-http&#xA; Given invalid parameters when -p param (project name) is missing exits with signal 1&#xA;" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart golang-http&#xA; Given invalid parameters when -f param (filter) does not match any quickstart exits with signal 1&#xA;" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="create spring&#xA; Given valid parameters when running jx create spring creates a spring application and promotes it to staging&#xA;" classname="BddJx Suite" time="789.394586308"></testcase>
+      <testcase name="import&#xA; Given valid parameters when running import creates an app from the specified folder and promotes it to staging&#xA;" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart node-http&#xA; Given valid parameters when operating on the quickstart creates a node-http quickstart and promotes it to staging&#xA;" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart node-http&#xA; Given invalid parameters when -p param (project name) is missing exits with signal 1&#xA;" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart node-http&#xA; Given invalid parameters when -f param (filter) does not match any quickstart exits with signal 1&#xA;" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart angular-io-quickstart Creates an app" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart android-quickstart Creates an app" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart rails-shopping-cart&#xA; Given valid parameters when operating on the quickstart creates a rails-shopping-cart quickstart and promotes it to staging&#xA;" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart rails-shopping-cart&#xA; Given invalid parameters when -p param (project name) is missing exits with signal 1&#xA;" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart rails-shopping-cart&#xA; Given invalid parameters when -f param (filter) does not match any quickstart exits with signal 1&#xA;" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart react-quickstart&#xA; Given valid parameters when operating on the quickstart creates a react-quickstart quickstart and promotes it to staging&#xA;" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart react-quickstart&#xA; Given invalid parameters when -p param (project name) is missing exits with signal 1&#xA;" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart react-quickstart&#xA; Given invalid parameters when -f param (filter) does not match any quickstart exits with signal 1&#xA;" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart vertx-rest-prometheus Creates an app" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart spring-boot-web&#xA; Given valid parameters when operating on the quickstart creates a spring-boot-web quickstart and promotes it to staging&#xA;" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart spring-boot-web&#xA; Given invalid parameters when -p param (project name) is missing exits with signal 1&#xA;" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart spring-boot-web&#xA; Given invalid parameters when -f param (filter) does not match any quickstart exits with signal 1&#xA;" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+      <testcase name="quickstart aspnet-app Creates an app" classname="BddJx Suite" time="0">
+          <skipped></skipped>
+      </testcase>
+  </testsuite>
