@@ -54,7 +54,7 @@ unset KUBECONFIG
 unset JX_HOME
 
 cp /tmp/build-log.txt /home/jenkins/go/jenkins-x/bdd-jx/reports
-jx step stash -c tests  --basedir "/home/jenkins/go/jenkins-x/bdd-jx/reports" -p "/home/jenkins/go/jenkins-x/bdd-jx/reports/*"
+jx step stash -c tests  --basedir "/home/jenkins/go/jenkins-x/bdd-jx/reports" -p "/home/jenkins/go/jenkins-x/bdd-jx/reports/*" --bucket-url gs://jenkins-x-bdd-tests
 
 echo "BDD Tests Done!"
 
