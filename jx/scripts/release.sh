@@ -40,7 +40,7 @@ git config --global --add user.email jenkins-x@googlegroups.com
 
 echo "starting the BDD Quickstart tests"
 
-jx step bdd -b  --provider=gke --git-provider=ghe --git-provider-url=https://github.beescloud.com --git-username dev1 --git-api-token $GHE_CREDS_PSW --default-admin-password $JENKINS_CREDS_PSW --no-delete-app --no-delete-repo --tests install --tests $TESTS --ignore-fail  &> /tmp/build-log.txt
+jx step bdd -b  --provider=gke --git-provider=ghe --git-provider-url=https://github.beescloud.com --git-username dev1 --git-api-token $GHE_CREDS_PSW --default-admin-password $JENKINS_CREDS_PSW --no-delete-app --no-delete-repo --tests install --tests $TESTS --ignore-fail  2>&1 | tee /tmp/build-log.txt
 
 echo ""
 echo ""
